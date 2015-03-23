@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:background="#ECECEC" android:orientation="vertical">
+
+	<RelativeLayout android:id="@+id/top"
+		android:layout_width="fill_parent" android:layout_height="44dp"
+		android:background="@drawable/bluetopbck">
+
+		<TextView android:id="@+id/addtxt" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_centerHorizontal="true"
+			android:layout_marginTop="10dip" android:ellipsize="end"
+			android:gravity="center" android:text="@string/location"
+			android:textColor="#FFFFFF" android:textSize="18sp"
+			android:textStyle="bold">
+		</TextView>
+
+		<Button android:id="@+id/back" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_alignParentLeft="true"
+			android:layout_marginLeft="10dp" android:background="@drawable/ibp"
+			android:text="@string/back" android:textColor="#FFFFFF"
+			android:paddingLeft="3dp" android:layout_centerVertical="true"
+			android:textStyle="bold" />
+	</RelativeLayout>
+
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_below="@+id/top" android:layout_height="fill_parent"
+		android:layout_margin="10dp" android:orientation="vertical">
+		<RelativeLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:id="@+id/fillar">
+			<RelativeLayout android:layout_width="fill_parent"  android:layout_toLeftOf="@+id/rectile"
+				android:layout_height="wrap_content" android:id="@+id/searchbar" android:background="@drawable/listwhitebck" >
+
+				<EditText android:layout_width="fill_parent" android:id="@+id/loc" android:background="@null" 
+					android:layout_height="wrap_content" android:layout_marginRight="20dp"
+					android:singleLine="true" android:textSize="14sp" 
+					android:textColor="#000000" android:imeOptions="actionSearch"></EditText>
+				<ImageView android:id="@+id/searchcancel"
+					android:layout_width="17dp" android:visibility="visible"
+					android:layout_height="17dp" 
+					android:layout_marginLeft="2dp" android:src="@drawable/cancel"
+					android:layout_alignParentRight="true"
+					android:layout_centerVertical="true">
+				</ImageView>
+			</RelativeLayout>
+			<ImageButton android:id="@+id/rectile"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_alignParentRight="true" android:layout_marginLeft="10dp"
+				android:background="@drawable/bluebtn" android:src="@drawable/reticle"
+				android:textColor="#FFFFFF" android:layout_centerVertical="true"
+				android:textStyle="bold" />
+		</RelativeLayout>
+		<com.google.android.maps.MapView
+			android:layout_below="@+id/fillar" android:id="@+id/map_location_viewer"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:clickable="true" android:background="#FF0000"
+			android:visibility="visible" android:apiKey="@string/mapapikey"
+			android:layout_marginTop="10dp" android:layout_marginBottom="10dp" />
+
+	</RelativeLayout>
+</RelativeLayout>

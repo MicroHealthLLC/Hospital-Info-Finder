@@ -1,0 +1,695 @@
+package com.micro.health.hospital.finder.dto;
+
+import java.io.Serializable;
+
+import com.micro.health.hospital.finder.HospitalApplication;
+
+
+
+public class TermDTO implements Serializable, Comparable<TermDTO>{
+	
+	private static final long serialVersionUID = 1939298533778151164L;
+	
+	private int _id;
+	private String _uuid;
+	private int _position;
+	private String _address;
+	private int provider_no;
+	private String hopital_name;
+	private String address;
+	private String city;
+	private String state;
+	private int zip_code;
+	private String country_name;
+	private String phone_number;
+	private float distance;
+	private int percent_of_patients_who_reported_that_their_nurses_sometimes_or_never_communicated_well_;
+	private int percent_of_patients_who_reported_that_their_nurses_usually_communicated_well_;
+	private int percent_of_patients_who_reported_that_their_nurses_always_communicated_well_;
+	private int percent_of_patients_who_reported_that_their_doctors_sometimes_or_never_communicated_well_;
+	private int percent_of_patients_who_reported_that_their_doctors_usually_communicated_well_;
+	private int percent_of_patients_who_reported_that_their_doctors_always_communicated_well_;
+	private int percent_of_patients_who_reported_that_they_sometimes_or_never_received_help_as_soon_as_they_wanted_;
+	private int percent_of_patients_who_reported_that_they_usually_received_help_as_soon_as_they_wanted_;
+	private int percent_of_patients_who_reported_that_they_always_received_help_as_soon_as_they_wanted_;
+	private int percent_of_patients_who_reported_that_their_pain_was_sometimes_or_never_well_controlled_;
+	private int percent_of_patients_who_reported_that_their_pain_was_usually_well_controlled_;
+	private int percent_of_patients_who_reported_that_their_pain_was_always_well_controlled_;
+	private int percent_of_patients_who_reported_that_staff_sometimes_or_never_explained_about_medicines_before_giving_it_to_them_;
+	private int percent_of_patients_who_reported_that_staff_usually_explained_about_medicines_before_giving_it_to_them_;
+	private int percent_of_patients_who_reported_that_staff_always_explained_about_medicines_before_giving_it_to_them_;
+	private int percent_of_patients_who_reported_that_their_room_and_bathroom_were_sometimes_or_never_clean_;
+	private int percent_of_patients_who_reported_that_their_room_and_bathroom_were_usually_clean_;
+	private int percent_of_patients_who_reported_that_their_room_and_bathroom_were_always_clean_;
+	private int percent_of_patients_who_reported_that_the_area_around_their_room_was_sometimes_or_never_quiet_at_night_;
+	private int percent_of_patients_who_reported_that_the_area_around_their_room_was_usually_quiet_at_night_;
+	private int percent_of_patients_who_reported_that_the_area_around_their_room_was_always_quiet_at_night_;
+	private int	percent_of_patients_who_reported_that_yes_they_were_given_information_about_what_to_do_during_their_recovery_at_home_;
+	private int percent_of_patients_who_reported_that_they_were_not_given_information_about_what_to_do_during_their_recovery_at_home_;
+	private int percent_of_patients_who_gave_their_hospital_a_rating_of_6_or_lower_on_a_scale_from_0_lowest_to_10_highest_;
+	private int percent_of_patients_who_gave_their_hospital_a_rating_of_7_or_8_on_a_scale_from_0_lowest_to_10_highest_;
+	private int percent_of_patients_who_gave_their_hospital_a_rating_of_9_or_10_on_a_scale_from_0_lowest_to_10_highest_;
+	private int percent_of_patients_who_reported_no_they_would_not_recommend_the_hospital_;
+	private int percent_of_patients_who_reported_yes_they_would_probably_recommend_the_hospital_;
+	private Integer	percent_of_patients_who_reported_yes_they_would_definitely_recommend_the_hospital_;
+	private String number_of_completed_surveys;
+	private int	survey_response_rate_percent;
+	
+	private double latitude;
+	private double longitude;
+	
+	private boolean favorites;
+	private String hospitalNote;
+	
+	public TermDTO() {
+	}
+
+	public TermDTO(
+			int _id,
+			String _uuid,
+			int _position,
+			String _address,
+			int provider_no,
+			String hopital_name,
+			String address,
+			String city,
+			String state,
+			int zip_code,
+			String country_name,
+			String phone_number,
+			int percent_of_patients_who_reported_that_their_nurses_sometimes_or_never_communicated_well_,
+			int percent_of_patients_who_reported_that_their_nurses_usually_communicated_well_,
+			int percent_of_patients_who_reported_that_their_nurses_always_communicated_well_,
+			int percent_of_patients_who_reported_that_their_doctors_sometimes_or_never_communicated_well_,
+			int percent_of_patients_who_reported_that_their_doctors_usually_communicated_well_,
+			int percent_of_patients_who_reported_that_their_doctors_always_communicated_well_,
+			int percent_of_patients_who_reported_that_they_sometimes_or_never_received_help_as_soon_as_they_wanted_,
+			int percent_of_patients_who_reported_that_they_usually_received_help_as_soon_as_they_wanted_,
+			int percent_of_patients_who_reported_that_they_always_received_help_as_soon_as_they_wanted_,
+			int percent_of_patients_who_reported_that_their_pain_was_sometimes_or_never_well_controlled_,
+			int percent_of_patients_who_reported_that_their_pain_was_usually_well_controlled_,
+			int percent_of_patients_who_reported_that_their_pain_was_always_well_controlled_,
+			int percent_of_patients_who_reported_that_staff_sometimes_or_never_explained_about_medicines_before_giving_it_to_them_,
+			int percent_of_patients_who_reported_that_staff_usually_explained_about_medicines_before_giving_it_to_them_,
+			int percent_of_patients_who_reported_that_staff_always_explained_about_medicines_before_giving_it_to_them_,
+			int percent_of_patients_who_reported_that_their_room_and_bathroom_were_sometimes_or_never_clean_,
+			int percent_of_patients_who_reported_that_their_room_and_bathroom_were_usually_clean_,
+			int percent_of_patients_who_reported_that_their_room_and_bathroom_were_always_clean_,
+			int percent_of_patients_who_reported_that_the_area_around_their_room_was_sometimes_or_never_quiet_at_night_,
+			int percent_of_patients_who_reported_that_the_area_around_their_room_was_usually_quiet_at_night_,
+			int percent_of_patients_who_reported_that_the_area_around_their_room_was_always_quiet_at_night_,
+			int percent_of_patients_who_reported_that_yes_they_were_given_information_about_what_to_do_during_their_recovery_at_home_,
+			int percent_of_patients_who_reported_that_they_were_not_given_information_about_what_to_do_during_their_recovery_at_home_,
+			int percent_of_patients_who_gave_their_hospital_a_rating_of_6_or_lower_on_a_scale_from_0_lowest_to_10_highest_,
+			int percent_of_patients_who_gave_their_hospital_a_rating_of_7_or_8_on_a_scale_from_0_lowest_to_10_highest_,
+			int percent_of_patients_who_gave_their_hospital_a_rating_of_9_or_10_on_a_scale_from_0_lowest_to_10_highest_,
+			int percent_of_patients_who_reported_no_they_would_not_recommend_the_hospital_,
+			int percent_of_patients_who_reported_yes_they_would_probably_recommend_the_hospital_,
+			int percent_of_patients_who_reported_yes_they_would_definitely_recommend_the_hospital_,
+			String number_of_completed_surveys, int survey_response_rate_percent) {
+		super();
+		this._id = _id;
+		this._uuid = _uuid;
+		this._position = _position;
+		this._address = _address;
+		this.provider_no = provider_no;
+		this.hopital_name = hopital_name;
+		this.address = address;
+		this.city = city;
+		this.state = state;
+		this.zip_code = zip_code;
+		this.country_name = country_name;
+		this.phone_number = phone_number;
+		this.percent_of_patients_who_reported_that_their_nurses_sometimes_or_never_communicated_well_ = percent_of_patients_who_reported_that_their_nurses_sometimes_or_never_communicated_well_;
+		this.percent_of_patients_who_reported_that_their_nurses_usually_communicated_well_ = percent_of_patients_who_reported_that_their_nurses_usually_communicated_well_;
+		this.percent_of_patients_who_reported_that_their_nurses_always_communicated_well_ = percent_of_patients_who_reported_that_their_nurses_always_communicated_well_;
+		this.percent_of_patients_who_reported_that_their_doctors_sometimes_or_never_communicated_well_ = percent_of_patients_who_reported_that_their_doctors_sometimes_or_never_communicated_well_;
+		this.percent_of_patients_who_reported_that_their_doctors_usually_communicated_well_ = percent_of_patients_who_reported_that_their_doctors_usually_communicated_well_;
+		this.percent_of_patients_who_reported_that_their_doctors_always_communicated_well_ = percent_of_patients_who_reported_that_their_doctors_always_communicated_well_;
+		this.percent_of_patients_who_reported_that_they_sometimes_or_never_received_help_as_soon_as_they_wanted_ = percent_of_patients_who_reported_that_they_sometimes_or_never_received_help_as_soon_as_they_wanted_;
+		this.percent_of_patients_who_reported_that_they_usually_received_help_as_soon_as_they_wanted_ = percent_of_patients_who_reported_that_they_usually_received_help_as_soon_as_they_wanted_;
+		this.percent_of_patients_who_reported_that_they_always_received_help_as_soon_as_they_wanted_ = percent_of_patients_who_reported_that_they_always_received_help_as_soon_as_they_wanted_;
+		this.percent_of_patients_who_reported_that_their_pain_was_sometimes_or_never_well_controlled_ = percent_of_patients_who_reported_that_their_pain_was_sometimes_or_never_well_controlled_;
+		this.percent_of_patients_who_reported_that_their_pain_was_usually_well_controlled_ = percent_of_patients_who_reported_that_their_pain_was_usually_well_controlled_;
+		this.percent_of_patients_who_reported_that_their_pain_was_always_well_controlled_ = percent_of_patients_who_reported_that_their_pain_was_always_well_controlled_;
+		this.percent_of_patients_who_reported_that_staff_sometimes_or_never_explained_about_medicines_before_giving_it_to_them_ = percent_of_patients_who_reported_that_staff_sometimes_or_never_explained_about_medicines_before_giving_it_to_them_;
+		this.percent_of_patients_who_reported_that_staff_usually_explained_about_medicines_before_giving_it_to_them_ = percent_of_patients_who_reported_that_staff_usually_explained_about_medicines_before_giving_it_to_them_;
+		this.percent_of_patients_who_reported_that_staff_always_explained_about_medicines_before_giving_it_to_them_ = percent_of_patients_who_reported_that_staff_always_explained_about_medicines_before_giving_it_to_them_;
+		this.percent_of_patients_who_reported_that_their_room_and_bathroom_were_sometimes_or_never_clean_ = percent_of_patients_who_reported_that_their_room_and_bathroom_were_sometimes_or_never_clean_;
+		this.percent_of_patients_who_reported_that_their_room_and_bathroom_were_usually_clean_ = percent_of_patients_who_reported_that_their_room_and_bathroom_were_usually_clean_;
+		this.percent_of_patients_who_reported_that_their_room_and_bathroom_were_always_clean_ = percent_of_patients_who_reported_that_their_room_and_bathroom_were_always_clean_;
+		this.percent_of_patients_who_reported_that_the_area_around_their_room_was_sometimes_or_never_quiet_at_night_ = percent_of_patients_who_reported_that_the_area_around_their_room_was_sometimes_or_never_quiet_at_night_;
+		this.percent_of_patients_who_reported_that_the_area_around_their_room_was_usually_quiet_at_night_ = percent_of_patients_who_reported_that_the_area_around_their_room_was_usually_quiet_at_night_;
+		this.percent_of_patients_who_reported_that_the_area_around_their_room_was_always_quiet_at_night_ = percent_of_patients_who_reported_that_the_area_around_their_room_was_always_quiet_at_night_;
+		this.percent_of_patients_who_reported_that_yes_they_were_given_information_about_what_to_do_during_their_recovery_at_home_ = percent_of_patients_who_reported_that_yes_they_were_given_information_about_what_to_do_during_their_recovery_at_home_;
+		this.percent_of_patients_who_reported_that_they_were_not_given_information_about_what_to_do_during_their_recovery_at_home_ = percent_of_patients_who_reported_that_they_were_not_given_information_about_what_to_do_during_their_recovery_at_home_;
+		this.percent_of_patients_who_gave_their_hospital_a_rating_of_6_or_lower_on_a_scale_from_0_lowest_to_10_highest_ = percent_of_patients_who_gave_their_hospital_a_rating_of_6_or_lower_on_a_scale_from_0_lowest_to_10_highest_;
+		this.percent_of_patients_who_gave_their_hospital_a_rating_of_7_or_8_on_a_scale_from_0_lowest_to_10_highest_ = percent_of_patients_who_gave_their_hospital_a_rating_of_7_or_8_on_a_scale_from_0_lowest_to_10_highest_;
+		this.percent_of_patients_who_gave_their_hospital_a_rating_of_9_or_10_on_a_scale_from_0_lowest_to_10_highest_ = percent_of_patients_who_gave_their_hospital_a_rating_of_9_or_10_on_a_scale_from_0_lowest_to_10_highest_;
+		this.percent_of_patients_who_reported_no_they_would_not_recommend_the_hospital_ = percent_of_patients_who_reported_no_they_would_not_recommend_the_hospital_;
+		this.percent_of_patients_who_reported_yes_they_would_probably_recommend_the_hospital_ = percent_of_patients_who_reported_yes_they_would_probably_recommend_the_hospital_;
+		this.percent_of_patients_who_reported_yes_they_would_definitely_recommend_the_hospital_ = percent_of_patients_who_reported_yes_they_would_definitely_recommend_the_hospital_;
+		this.number_of_completed_surveys = number_of_completed_surveys;
+		this.survey_response_rate_percent = survey_response_rate_percent;
+	}
+
+	public int getId() {
+		return _id;
+	}
+
+	public void setId(int id) {
+		this._id = id;
+	}
+
+	public String getUuid() {
+		return _uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this._uuid = uuid;
+	}
+	
+	public String getNumber_of_completed_surveys() {
+		return number_of_completed_surveys;
+	}
+
+	public void setNumber_of_completed_surveys(String number_of_completed_surveys) {
+		this.number_of_completed_surveys = number_of_completed_surveys;
+	}
+	public int getPosition() {
+		return _position;
+	}
+
+	public void setPosition(int position) {
+		this._position = position;
+	}
+
+	public String get_address() {
+		return _address;
+	}
+
+	public void set_address(String _address) {
+		this._address = _address;
+	}
+
+	public int getProvider_no() {
+		return provider_no;
+	}
+
+	public void setProvider_no(int provider_no) {
+		this.provider_no = provider_no;
+	}
+
+	public String getHopital_name() {
+		return hopital_name;
+	}
+
+	public void setHopital_name(String hopital_name) {
+		this.hopital_name = hopital_name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public int getZip_code() {
+		return zip_code;
+	}
+
+	public void setZip_code(int zip_code) {
+		this.zip_code = zip_code;
+	}
+
+	public String getCountry_name() {
+		return country_name;
+	}
+
+	public void setCountry_name(String country_name) {
+		this.country_name = country_name;
+	}
+
+	public String getPhone_number() {
+		return phone_number;
+	}
+
+	public void setPhone_number(String phone_number) {
+		this.phone_number = phone_number;
+	}
+
+	public int getPercent_of_patients_who_reported_that_their_nurses_sometimes_or_never_communicated_well_() {
+		return percent_of_patients_who_reported_that_their_nurses_sometimes_or_never_communicated_well_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_their_nurses_sometimes_or_never_communicated_well_(
+			int percent_of_patients_who_reported_that_their_nurses_sometimes_or_never_communicated_well_) {
+		this.percent_of_patients_who_reported_that_their_nurses_sometimes_or_never_communicated_well_ = percent_of_patients_who_reported_that_their_nurses_sometimes_or_never_communicated_well_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_their_nurses_usually_communicated_well_() {
+		return percent_of_patients_who_reported_that_their_nurses_usually_communicated_well_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_their_nurses_usually_communicated_well_(
+			int percent_of_patients_who_reported_that_their_nurses_usually_communicated_well_) {
+		this.percent_of_patients_who_reported_that_their_nurses_usually_communicated_well_ = percent_of_patients_who_reported_that_their_nurses_usually_communicated_well_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_their_nurses_always_communicated_well_() {
+		return percent_of_patients_who_reported_that_their_nurses_always_communicated_well_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_their_nurses_always_communicated_well_(
+			int percent_of_patients_who_reported_that_their_nurses_always_communicated_well_) {
+		this.percent_of_patients_who_reported_that_their_nurses_always_communicated_well_ = percent_of_patients_who_reported_that_their_nurses_always_communicated_well_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_their_doctors_sometimes_or_never_communicated_well_() {
+		return percent_of_patients_who_reported_that_their_doctors_sometimes_or_never_communicated_well_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_their_doctors_sometimes_or_never_communicated_well_(
+			int percent_of_patients_who_reported_that_their_doctors_sometimes_or_never_communicated_well_) {
+		this.percent_of_patients_who_reported_that_their_doctors_sometimes_or_never_communicated_well_ = percent_of_patients_who_reported_that_their_doctors_sometimes_or_never_communicated_well_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_their_doctors_usually_communicated_well_() {
+		return percent_of_patients_who_reported_that_their_doctors_usually_communicated_well_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_their_doctors_usually_communicated_well_(
+			int percent_of_patients_who_reported_that_their_doctors_usually_communicated_well_) {
+		this.percent_of_patients_who_reported_that_their_doctors_usually_communicated_well_ = percent_of_patients_who_reported_that_their_doctors_usually_communicated_well_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_their_doctors_always_communicated_well_() {
+		return percent_of_patients_who_reported_that_their_doctors_always_communicated_well_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_their_doctors_always_communicated_well_(
+			int percent_of_patients_who_reported_that_their_doctors_always_communicated_well_) {
+		this.percent_of_patients_who_reported_that_their_doctors_always_communicated_well_ = percent_of_patients_who_reported_that_their_doctors_always_communicated_well_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_they_sometimes_or_never_received_help_as_soon_as_they_wanted_() {
+		return percent_of_patients_who_reported_that_they_sometimes_or_never_received_help_as_soon_as_they_wanted_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_they_sometimes_or_never_received_help_as_soon_as_they_wanted_(
+			int percent_of_patients_who_reported_that_they_sometimes_or_never_received_help_as_soon_as_they_wanted_) {
+		this.percent_of_patients_who_reported_that_they_sometimes_or_never_received_help_as_soon_as_they_wanted_ = percent_of_patients_who_reported_that_they_sometimes_or_never_received_help_as_soon_as_they_wanted_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_they_usually_received_help_as_soon_as_they_wanted_() {
+		return percent_of_patients_who_reported_that_they_usually_received_help_as_soon_as_they_wanted_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_they_usually_received_help_as_soon_as_they_wanted_(
+			int percent_of_patients_who_reported_that_they_usually_received_help_as_soon_as_they_wanted_) {
+		this.percent_of_patients_who_reported_that_they_usually_received_help_as_soon_as_they_wanted_ = percent_of_patients_who_reported_that_they_usually_received_help_as_soon_as_they_wanted_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_they_always_received_help_as_soon_as_they_wanted_() {
+		return percent_of_patients_who_reported_that_they_always_received_help_as_soon_as_they_wanted_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_they_always_received_help_as_soon_as_they_wanted_(
+			int percent_of_patients_who_reported_that_they_always_received_help_as_soon_as_they_wanted_) {
+		this.percent_of_patients_who_reported_that_they_always_received_help_as_soon_as_they_wanted_ = percent_of_patients_who_reported_that_they_always_received_help_as_soon_as_they_wanted_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_their_pain_was_sometimes_or_never_well_controlled_() {
+		return percent_of_patients_who_reported_that_their_pain_was_sometimes_or_never_well_controlled_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_their_pain_was_sometimes_or_never_well_controlled_(
+			int percent_of_patients_who_reported_that_their_pain_was_sometimes_or_never_well_controlled_) {
+		this.percent_of_patients_who_reported_that_their_pain_was_sometimes_or_never_well_controlled_ = percent_of_patients_who_reported_that_their_pain_was_sometimes_or_never_well_controlled_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_their_pain_was_usually_well_controlled_() {
+		return percent_of_patients_who_reported_that_their_pain_was_usually_well_controlled_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_their_pain_was_usually_well_controlled_(
+			int percent_of_patients_who_reported_that_their_pain_was_usually_well_controlled_) {
+		this.percent_of_patients_who_reported_that_their_pain_was_usually_well_controlled_ = percent_of_patients_who_reported_that_their_pain_was_usually_well_controlled_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_their_pain_was_always_well_controlled_() {
+		return percent_of_patients_who_reported_that_their_pain_was_always_well_controlled_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_their_pain_was_always_well_controlled_(
+			int percent_of_patients_who_reported_that_their_pain_was_always_well_controlled_) {
+		this.percent_of_patients_who_reported_that_their_pain_was_always_well_controlled_ = percent_of_patients_who_reported_that_their_pain_was_always_well_controlled_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_staff_sometimes_or_never_explained_about_medicines_before_giving_it_to_them_() {
+		return percent_of_patients_who_reported_that_staff_sometimes_or_never_explained_about_medicines_before_giving_it_to_them_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_staff_sometimes_or_never_explained_about_medicines_before_giving_it_to_them_(
+			int percent_of_patients_who_reported_that_staff_sometimes_or_never_explained_about_medicines_before_giving_it_to_them_) {
+		this.percent_of_patients_who_reported_that_staff_sometimes_or_never_explained_about_medicines_before_giving_it_to_them_ = percent_of_patients_who_reported_that_staff_sometimes_or_never_explained_about_medicines_before_giving_it_to_them_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_staff_usually_explained_about_medicines_before_giving_it_to_them_() {
+		return percent_of_patients_who_reported_that_staff_usually_explained_about_medicines_before_giving_it_to_them_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_staff_usually_explained_about_medicines_before_giving_it_to_them_(
+			int percent_of_patients_who_reported_that_staff_usually_explained_about_medicines_before_giving_it_to_them_) {
+		this.percent_of_patients_who_reported_that_staff_usually_explained_about_medicines_before_giving_it_to_them_ = percent_of_patients_who_reported_that_staff_usually_explained_about_medicines_before_giving_it_to_them_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_staff_always_explained_about_medicines_before_giving_it_to_them_() {
+		return percent_of_patients_who_reported_that_staff_always_explained_about_medicines_before_giving_it_to_them_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_staff_always_explained_about_medicines_before_giving_it_to_them_(
+			int percent_of_patients_who_reported_that_staff_always_explained_about_medicines_before_giving_it_to_them_) {
+		this.percent_of_patients_who_reported_that_staff_always_explained_about_medicines_before_giving_it_to_them_ = percent_of_patients_who_reported_that_staff_always_explained_about_medicines_before_giving_it_to_them_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_their_room_and_bathroom_were_sometimes_or_never_clean_() {
+		return percent_of_patients_who_reported_that_their_room_and_bathroom_were_sometimes_or_never_clean_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_their_room_and_bathroom_were_sometimes_or_never_clean_(
+			int percent_of_patients_who_reported_that_their_room_and_bathroom_were_sometimes_or_never_clean_) {
+		this.percent_of_patients_who_reported_that_their_room_and_bathroom_were_sometimes_or_never_clean_ = percent_of_patients_who_reported_that_their_room_and_bathroom_were_sometimes_or_never_clean_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_their_room_and_bathroom_were_usually_clean_() {
+		return percent_of_patients_who_reported_that_their_room_and_bathroom_were_usually_clean_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_their_room_and_bathroom_were_usually_clean_(
+			int percent_of_patients_who_reported_that_their_room_and_bathroom_were_usually_clean_) {
+		this.percent_of_patients_who_reported_that_their_room_and_bathroom_were_usually_clean_ = percent_of_patients_who_reported_that_their_room_and_bathroom_were_usually_clean_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_their_room_and_bathroom_were_always_clean_() {
+		return percent_of_patients_who_reported_that_their_room_and_bathroom_were_always_clean_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_their_room_and_bathroom_were_always_clean_(
+			int percent_of_patients_who_reported_that_their_room_and_bathroom_were_always_clean_) {
+		this.percent_of_patients_who_reported_that_their_room_and_bathroom_were_always_clean_ = percent_of_patients_who_reported_that_their_room_and_bathroom_were_always_clean_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_the_area_around_their_room_was_sometimes_or_never_quiet_at_night_() {
+		return percent_of_patients_who_reported_that_the_area_around_their_room_was_sometimes_or_never_quiet_at_night_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_the_area_around_their_room_was_sometimes_or_never_quiet_at_night_(
+			int percent_of_patients_who_reported_that_the_area_around_their_room_was_sometimes_or_never_quiet_at_night_) {
+		this.percent_of_patients_who_reported_that_the_area_around_their_room_was_sometimes_or_never_quiet_at_night_ = percent_of_patients_who_reported_that_the_area_around_their_room_was_sometimes_or_never_quiet_at_night_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_the_area_around_their_room_was_usually_quiet_at_night_() {
+		return percent_of_patients_who_reported_that_the_area_around_their_room_was_usually_quiet_at_night_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_the_area_around_their_room_was_usually_quiet_at_night_(
+			int percent_of_patients_who_reported_that_the_area_around_their_room_was_usually_quiet_at_night_) {
+		this.percent_of_patients_who_reported_that_the_area_around_their_room_was_usually_quiet_at_night_ = percent_of_patients_who_reported_that_the_area_around_their_room_was_usually_quiet_at_night_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_the_area_around_their_room_was_always_quiet_at_night_() {
+		return percent_of_patients_who_reported_that_the_area_around_their_room_was_always_quiet_at_night_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_the_area_around_their_room_was_always_quiet_at_night_(
+			int percent_of_patients_who_reported_that_the_area_around_their_room_was_always_quiet_at_night_) {
+		this.percent_of_patients_who_reported_that_the_area_around_their_room_was_always_quiet_at_night_ = percent_of_patients_who_reported_that_the_area_around_their_room_was_always_quiet_at_night_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_yes_they_were_given_information_about_what_to_do_during_their_recovery_at_home_() {
+		return percent_of_patients_who_reported_that_yes_they_were_given_information_about_what_to_do_during_their_recovery_at_home_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_yes_they_were_given_information_about_what_to_do_during_their_recovery_at_home_(
+			int percent_of_patients_who_reported_that_yes_they_were_given_information_about_what_to_do_during_their_recovery_at_home_) {
+		this.percent_of_patients_who_reported_that_yes_they_were_given_information_about_what_to_do_during_their_recovery_at_home_ = percent_of_patients_who_reported_that_yes_they_were_given_information_about_what_to_do_during_their_recovery_at_home_;
+	}
+
+	public int getPercent_of_patients_who_reported_that_they_were_not_given_information_about_what_to_do_during_their_recovery_at_home_() {
+		return percent_of_patients_who_reported_that_they_were_not_given_information_about_what_to_do_during_their_recovery_at_home_;
+	}
+
+	public void setPercent_of_patients_who_reported_that_they_were_not_given_information_about_what_to_do_during_their_recovery_at_home_(
+			int percent_of_patients_who_reported_that_they_were_not_given_information_about_what_to_do_during_their_recovery_at_home_) {
+		this.percent_of_patients_who_reported_that_they_were_not_given_information_about_what_to_do_during_their_recovery_at_home_ = percent_of_patients_who_reported_that_they_were_not_given_information_about_what_to_do_during_their_recovery_at_home_;
+	}
+
+	public int getPercent_of_patients_who_gave_their_hospital_a_rating_of_6_or_lower_on_a_scale_from_0_lowest_to_10_highest_() {
+		return percent_of_patients_who_gave_their_hospital_a_rating_of_6_or_lower_on_a_scale_from_0_lowest_to_10_highest_;
+	}
+
+	public void setPercent_of_patients_who_gave_their_hospital_a_rating_of_6_or_lower_on_a_scale_from_0_lowest_to_10_highest_(
+			int percent_of_patients_who_gave_their_hospital_a_rating_of_6_or_lower_on_a_scale_from_0_lowest_to_10_highest_) {
+		this.percent_of_patients_who_gave_their_hospital_a_rating_of_6_or_lower_on_a_scale_from_0_lowest_to_10_highest_ = percent_of_patients_who_gave_their_hospital_a_rating_of_6_or_lower_on_a_scale_from_0_lowest_to_10_highest_;
+	}
+
+	public int getPercent_of_patients_who_gave_their_hospital_a_rating_of_7_or_8_on_a_scale_from_0_lowest_to_10_highest_() {
+		return percent_of_patients_who_gave_their_hospital_a_rating_of_7_or_8_on_a_scale_from_0_lowest_to_10_highest_;
+	}
+
+	public void setPercent_of_patients_who_gave_their_hospital_a_rating_of_7_or_8_on_a_scale_from_0_lowest_to_10_highest_(
+			int percent_of_patients_who_gave_their_hospital_a_rating_of_7_or_8_on_a_scale_from_0_lowest_to_10_highest_) {
+		this.percent_of_patients_who_gave_their_hospital_a_rating_of_7_or_8_on_a_scale_from_0_lowest_to_10_highest_ = percent_of_patients_who_gave_their_hospital_a_rating_of_7_or_8_on_a_scale_from_0_lowest_to_10_highest_;
+	}
+
+	public int getPercent_of_patients_who_gave_their_hospital_a_rating_of_9_or_10_on_a_scale_from_0_lowest_to_10_highest_() {
+		return percent_of_patients_who_gave_their_hospital_a_rating_of_9_or_10_on_a_scale_from_0_lowest_to_10_highest_;
+	}
+
+	public void setPercent_of_patients_who_gave_their_hospital_a_rating_of_9_or_10_on_a_scale_from_0_lowest_to_10_highest_(
+			int percent_of_patients_who_gave_their_hospital_a_rating_of_9_or_10_on_a_scale_from_0_lowest_to_10_highest_) {
+		this.percent_of_patients_who_gave_their_hospital_a_rating_of_9_or_10_on_a_scale_from_0_lowest_to_10_highest_ = percent_of_patients_who_gave_their_hospital_a_rating_of_9_or_10_on_a_scale_from_0_lowest_to_10_highest_;
+	}
+
+	public int getPercent_of_patients_who_reported_no_they_would_not_recommend_the_hospital_() {
+		return percent_of_patients_who_reported_no_they_would_not_recommend_the_hospital_;
+	}
+
+	public void setPercent_of_patients_who_reported_no_they_would_not_recommend_the_hospital_(
+			int percent_of_patients_who_reported_no_they_would_not_recommend_the_hospital_) {
+		this.percent_of_patients_who_reported_no_they_would_not_recommend_the_hospital_ = percent_of_patients_who_reported_no_they_would_not_recommend_the_hospital_;
+	}
+
+	public int getPercent_of_patients_who_reported_yes_they_would_probably_recommend_the_hospital_() {
+		return percent_of_patients_who_reported_yes_they_would_probably_recommend_the_hospital_;
+	}
+
+	public void setPercent_of_patients_who_reported_yes_they_would_probably_recommend_the_hospital_(
+			int percent_of_patients_who_reported_yes_they_would_probably_recommend_the_hospital_) {
+		this.percent_of_patients_who_reported_yes_they_would_probably_recommend_the_hospital_ = percent_of_patients_who_reported_yes_they_would_probably_recommend_the_hospital_;
+	}
+
+	public Integer getPercent_of_patients_who_reported_yes_they_would_definitely_recommend_the_hospital_() {
+		return percent_of_patients_who_reported_yes_they_would_definitely_recommend_the_hospital_;
+	}
+
+	public void setPercent_of_patients_who_reported_yes_they_would_definitely_recommend_the_hospital_(
+			Integer percent_of_patients_who_reported_yes_they_would_definitely_recommend_the_hospital_) {
+		this.percent_of_patients_who_reported_yes_they_would_definitely_recommend_the_hospital_ = percent_of_patients_who_reported_yes_they_would_definitely_recommend_the_hospital_;
+	}
+
+	
+
+	public int getSurvey_response_rate_percent() {
+		return survey_response_rate_percent;
+	}
+
+	public void setSurvey_response_rate_percent(int survey_response_rate_percent) {
+		this.survey_response_rate_percent = survey_response_rate_percent;
+	}
+	
+	public double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+
+	public double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+	
+	public float getDistance() {
+		return distance;
+	}
+	public void setDistance(float distance) {
+		this.distance = distance;
+	}
+	
+	public boolean isFavorites() {
+		return favorites;
+	}
+
+	public void setFavorites(boolean favorites) {
+		this.favorites = favorites;
+	}
+	
+	public String getHospitalNote() {
+		return hospitalNote;
+	}
+
+	public void setHospitalNote(String hospitalNote) {
+		this.hospitalNote = hospitalNote;
+	}
+
+	@Override
+	public String toString() {
+		return "TermDTO [_id="
+				+ _id
+				+ ", _uuid="
+				+ _uuid
+				+ ", _position="
+				+ _position
+				+ ", _address="
+				+ _address
+				+ ", provider_no="
+				+ provider_no
+				+ ", hopital_name="
+				+ hopital_name
+				+ ", address="
+				+ address
+				+ ", city="
+				+ city
+				+ ", state="
+				+ state
+				+ ", zip_code="
+				+ zip_code
+				+ ", country_name="
+				+ country_name
+				+ ", phone_number="
+				+ phone_number
+				+ ", distance="
+				+ distance
+				+ ", percent_of_patients_who_reported_that_their_nurses_sometimes_or_never_communicated_well_="
+				+ percent_of_patients_who_reported_that_their_nurses_sometimes_or_never_communicated_well_
+				+ ", percent_of_patients_who_reported_that_their_nurses_usually_communicated_well_="
+				+ percent_of_patients_who_reported_that_their_nurses_usually_communicated_well_
+				+ ", percent_of_patients_who_reported_that_their_nurses_always_communicated_well_="
+				+ percent_of_patients_who_reported_that_their_nurses_always_communicated_well_
+				+ ", percent_of_patients_who_reported_that_their_doctors_sometimes_or_never_communicated_well_="
+				+ percent_of_patients_who_reported_that_their_doctors_sometimes_or_never_communicated_well_
+				+ ", percent_of_patients_who_reported_that_their_doctors_usually_communicated_well_="
+				+ percent_of_patients_who_reported_that_their_doctors_usually_communicated_well_
+				+ ", percent_of_patients_who_reported_that_their_doctors_always_communicated_well_="
+				+ percent_of_patients_who_reported_that_their_doctors_always_communicated_well_
+				+ ", percent_of_patients_who_reported_that_they_sometimes_or_never_received_help_as_soon_as_they_wanted_="
+				+ percent_of_patients_who_reported_that_they_sometimes_or_never_received_help_as_soon_as_they_wanted_
+				+ ", percent_of_patients_who_reported_that_they_usually_received_help_as_soon_as_they_wanted_="
+				+ percent_of_patients_who_reported_that_they_usually_received_help_as_soon_as_they_wanted_
+				+ ", percent_of_patients_who_reported_that_they_always_received_help_as_soon_as_they_wanted_="
+				+ percent_of_patients_who_reported_that_they_always_received_help_as_soon_as_they_wanted_
+				+ ", percent_of_patients_who_reported_that_their_pain_was_sometimes_or_never_well_controlled_="
+				+ percent_of_patients_who_reported_that_their_pain_was_sometimes_or_never_well_controlled_
+				+ ", percent_of_patients_who_reported_that_their_pain_was_usually_well_controlled_="
+				+ percent_of_patients_who_reported_that_their_pain_was_usually_well_controlled_
+				+ ", percent_of_patients_who_reported_that_their_pain_was_always_well_controlled_="
+				+ percent_of_patients_who_reported_that_their_pain_was_always_well_controlled_
+				+ ", percent_of_patients_who_reported_that_staff_sometimes_or_never_explained_about_medicines_before_giving_it_to_them_="
+				+ percent_of_patients_who_reported_that_staff_sometimes_or_never_explained_about_medicines_before_giving_it_to_them_
+				+ ", percent_of_patients_who_reported_that_staff_usually_explained_about_medicines_before_giving_it_to_them_="
+				+ percent_of_patients_who_reported_that_staff_usually_explained_about_medicines_before_giving_it_to_them_
+				+ ", percent_of_patients_who_reported_that_staff_always_explained_about_medicines_before_giving_it_to_them_="
+				+ percent_of_patients_who_reported_that_staff_always_explained_about_medicines_before_giving_it_to_them_
+				+ ", percent_of_patients_who_reported_that_their_room_and_bathroom_were_sometimes_or_never_clean_="
+				+ percent_of_patients_who_reported_that_their_room_and_bathroom_were_sometimes_or_never_clean_
+				+ ", percent_of_patients_who_reported_that_their_room_and_bathroom_were_usually_clean_="
+				+ percent_of_patients_who_reported_that_their_room_and_bathroom_were_usually_clean_
+				+ ", percent_of_patients_who_reported_that_their_room_and_bathroom_were_always_clean_="
+				+ percent_of_patients_who_reported_that_their_room_and_bathroom_were_always_clean_
+				+ ", percent_of_patients_who_reported_that_the_area_around_their_room_was_sometimes_or_never_quiet_at_night_="
+				+ percent_of_patients_who_reported_that_the_area_around_their_room_was_sometimes_or_never_quiet_at_night_
+				+ ", percent_of_patients_who_reported_that_the_area_around_their_room_was_usually_quiet_at_night_="
+				+ percent_of_patients_who_reported_that_the_area_around_their_room_was_usually_quiet_at_night_
+				+ ", percent_of_patients_who_reported_that_the_area_around_their_room_was_always_quiet_at_night_="
+				+ percent_of_patients_who_reported_that_the_area_around_their_room_was_always_quiet_at_night_
+				+ ", percent_of_patients_who_reported_that_yes_they_were_given_information_about_what_to_do_during_their_recovery_at_home_="
+				+ percent_of_patients_who_reported_that_yes_they_were_given_information_about_what_to_do_during_their_recovery_at_home_
+				+ ", percent_of_patients_who_reported_that_they_were_not_given_information_about_what_to_do_during_their_recovery_at_home_="
+				+ percent_of_patients_who_reported_that_they_were_not_given_information_about_what_to_do_during_their_recovery_at_home_
+				+ ", percent_of_patients_who_gave_their_hospital_a_rating_of_6_or_lower_on_a_scale_from_0_lowest_to_10_highest_="
+				+ percent_of_patients_who_gave_their_hospital_a_rating_of_6_or_lower_on_a_scale_from_0_lowest_to_10_highest_
+				+ ", percent_of_patients_who_gave_their_hospital_a_rating_of_7_or_8_on_a_scale_from_0_lowest_to_10_highest_="
+				+ percent_of_patients_who_gave_their_hospital_a_rating_of_7_or_8_on_a_scale_from_0_lowest_to_10_highest_
+				+ ", percent_of_patients_who_gave_their_hospital_a_rating_of_9_or_10_on_a_scale_from_0_lowest_to_10_highest_="
+				+ percent_of_patients_who_gave_their_hospital_a_rating_of_9_or_10_on_a_scale_from_0_lowest_to_10_highest_
+				+ ", percent_of_patients_who_reported_no_they_would_not_recommend_the_hospital_="
+				+ percent_of_patients_who_reported_no_they_would_not_recommend_the_hospital_
+				+ ", percent_of_patients_who_reported_yes_they_would_probably_recommend_the_hospital_="
+				+ percent_of_patients_who_reported_yes_they_would_probably_recommend_the_hospital_
+				+ ", percent_of_patients_who_reported_yes_they_would_definitely_recommend_the_hospital_="
+				+ percent_of_patients_who_reported_yes_they_would_definitely_recommend_the_hospital_
+				+ ", number_of_completed_surveys="
+				+ number_of_completed_surveys
+				+ ", survey_response_rate_percent="
+				+ survey_response_rate_percent + ", latitude=" + latitude
+				+ ", longitude=" + longitude + ", favorites=" + favorites + "]";
+	}
+	
+	@Override
+	public int compareTo(TermDTO another) {
+		if(HospitalApplication.currentCompare == HospitalApplication.RATINGCOMPARE) {
+			if (!(another instanceof TermDTO)) {
+				throw new ClassCastException("Invalid object");
+			} else {
+				int i1 = this.percent_of_patients_who_reported_yes_they_would_definitely_recommend_the_hospital_;
+				int i2 = ((TermDTO) another).getPercent_of_patients_who_reported_yes_they_would_definitely_recommend_the_hospital_();
+				if (i1 == i2)
+                    return 0;
+				else if (i1 > i2)
+                    return 1;
+				else
+                    return -1;
+			}
+		}
+		else {
+			if (!(another instanceof TermDTO)) {
+				throw new ClassCastException("Invalid object");
+			} else {
+				/*String city1 = this.city;
+				String city2 = ((TermDTO) another).getCity();
+				if(city1.equals(city2)) {
+					return 0;
+				} else if(this.zip_code == ((TermDTO) another).getZip_code()){
+					return 0;
+				} else {*/
+					return Float.compare(this.distance, ((TermDTO) another).getDistance());
+				//}
+			}
+		}
+	}
+
+}

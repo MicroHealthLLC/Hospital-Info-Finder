@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/favll" android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:orientation="vertical">
+	<TextView android:id="@+id/favoritetap1" android:singleLine="true"
+		android:layout_width="fill_parent" android:layout_height="30dp"
+		android:layout_alignParentLeft="true" android:layout_below="@+id/favorite"
+		android:drawableLeft="@drawable/star" android:paddingLeft="15dp"
+		android:paddingTop="10dp" android:text="@string/tap1"
+		android:textColor="#555555" android:textSize="16sp" android:textStyle="bold">
+	</TextView>
+	<TextView android:id="@+id/favoritetap2" android:singleLine="true"
+		android:layout_width="fill_parent" android:layout_height="30dp"
+		android:layout_alignParentLeft="true" android:layout_below="@+id/favoritetap1"
+		android:paddingLeft="35dp" android:text="@string/tap2"
+		android:textColor="#555555" android:textSize="16sp">
+	</TextView>
+</LinearLayout>

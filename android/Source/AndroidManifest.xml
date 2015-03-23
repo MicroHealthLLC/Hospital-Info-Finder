@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.micro.health.hospital.finder" android:versionCode="1"
+	android:versionName="1.0">
+
+	<uses-sdk android:minSdkVersion="7" />
+
+	<application android:icon="@drawable/icon"
+		android:theme="@android:style/Theme.Black.NoTitleBar" android:label="@string/app_name"
+		android:name=".HospitalApplication">
+		<activity android:theme="@android:style/Theme.Black.NoTitleBar"
+			android:name=".SplashScreenActivity" android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name=".HospitalFinderActivity" android:label="@string/app_name">
+		</activity>
+		<activity android:name=".LocationActivity" android:label="@string/app_name">
+		</activity>
+		<activity android:name=".SettingActivity" android:label="@string/app_name">
+		</activity>
+		<activity android:name=".CopyrightActivity" android:label="@string/app_name">
+		</activity>
+		<activity android:name=".FeedbackActivity" android:label="@string/app_name">
+		</activity>
+		<activity android:name=".FAQActivity" android:label="@string/app_name">
+		</activity>
+		<activity android:name=".LocationSelectActivity" android:label="@string/app_name">
+		</activity>
+		<activity android:name=".LocationSettingActivity" android:label="@string/app_name">
+		</activity>
+		<activity android:name=".LocationPickActivity" android:label="@string/app_name">
+		</activity>
+		<activity android:name=".HospitalDetailActivity" android:label="@string/app_name">
+		</activity>
+		<uses-library android:name="com.google.android.maps" />
+	</application>
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.CALL_PHONE" />
+</manifest>

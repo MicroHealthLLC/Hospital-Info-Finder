@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:background="#55000000">
+	<LinearLayout android:layout_width="wrap_content"
+		android:layout_centerInParent="true"
+		android:layout_height="wrap_content" android:orientation="vertical"
+		android:layout_margin="10dp" android:background="@drawable/upgradebck">
+		<LinearLayout android:layout_margin="10dp"
+			android:gravity="center" android:layout_gravity="center"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:orientation="vertical">
+			<TextView android:id="@+id/restrt_ur_dvs"
+				android:layout_marginTop="5dp" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:text="@string/upgradeto"
+				android:textStyle="bold" android:textSize="20sp"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:textColor="#00346D" android:gravity="center_horizontal" />
+			<TextView android:id="@+id/re_down" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:gravity="center_horizontal"
+				android:textSize="20sp" android:layout_marginTop="20dp"
+				android:text="@string/getrid" android:textAppearance="?android:attr/textAppearanceLarge"
+				android:textColor="#00346D" />
+			<LinearLayout android:layout_width="fill_parent"
+				android:layout_marginTop="50dp" android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<Button android:id="@+id/notnow" android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="true" android:layout_weight="1"
+					android:layout_centerVertical="true" android:textSize="14sp"
+					android:background="@drawable/upgrad" android:text="@string/notnow"
+					android:textStyle="bold" android:textColor="@color/upgrade" />
+				<Button android:id="@+id/upgradeto" android:layout_width="fill_parent"
+					android:layout_height="wrap_content" android:textStyle="bold"
+					android:textSize="14sp" android:layout_alignParentLeft="true"
+					android:layout_marginLeft="10dp" android:layout_weight="1"
+					android:layout_centerVertical="true" android:background="@drawable/upgrad"
+					android:text="@string/upgrade" android:textColor="@color/upgrade" />
+
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+</RelativeLayout>

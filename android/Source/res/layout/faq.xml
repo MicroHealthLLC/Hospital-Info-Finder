@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:background="#ECECEC" android:orientation="vertical">
+	<RelativeLayout android:id="@+id/top"
+		android:layout_width="fill_parent" android:layout_height="44dp"
+		android:background="@drawable/bluetopbck">
+		<Button android:id="@+id/faqsettingbtn" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_marginBottom="5dp"
+			android:layout_marginLeft="10dp" android:layout_marginTop="5dp"
+			android:paddingLeft="10dp" android:paddingRight="5dp"
+			android:background="@drawable/ibp" android:gravity="center"
+			android:text="@string/settings" android:textColor="#FFFFFF"
+			android:textSize="10sp" android:textStyle="bold" />
+
+		<TextView android:id="@+id/addtxt" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_centerHorizontal="true"
+			android:layout_marginTop="5dp" android:ellipsize="end"
+			android:gravity="center" android:text="@string/faq"
+			android:textColor="#FFFFFF" android:textSize="22sp"
+			android:textStyle="bold">
+		</TextView>
+	</RelativeLayout>
+	<ScrollView android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:scrollbars="none"
+		android:layout_below="@+id/top">
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="fill_parent" android:orientation="vertical"
+			android:padding="10dp">
+			<TextView android:id="@+id/restrt_ur_dvs"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:background="@drawable/listwhitebck" android:text="@string/Restartyourdivise"
+				android:textSize="18sp" android:textAppearance="?android:attr/textAppearanceLarge"
+				android:textColor="#000000" />
+			<TextView android:id="@+id/re_down" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:layout_marginTop="5dp"
+				android:textSize="18sp" android:background="@drawable/listwhitebck"
+				android:text="@string/redownloadapp" android:textAppearance="?android:attr/textAppearanceLarge"
+				android:textColor="#000000" />
+		</LinearLayout>
+	</ScrollView>
+</RelativeLayout>

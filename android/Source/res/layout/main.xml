@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content" android:layout_height="fill_parent"
+	android:background="#FFFFFF">
+
+	<LinearLayout android:id="@+id/top" android:layout_width="fill_parent"
+		android:layout_alignParentTop="true" android:layout_height="wrap_content"
+		android:orientation="vertical">
+		<LinearLayout android:id="@+id/topbutton" android:gravity="center_vertical"
+			android:layout_width="fill_parent" android:layout_height="44dp"
+			android:layout_gravity="center_vertical" android:background="@drawable/topbar_s1"
+			android:padding="5dp">
+			<Button android:id="@+id/nearbybutton" android:layout_width="fill_parent"
+				android:textSize="14sp" android:layout_height="30dp"
+				android:layout_weight="1" android:textColor="#FFFFFF"
+				android:textStyle="bold" android:background="@drawable/left_img"
+				android:text="@string/nearby">
+			</Button>
+
+			<Button android:id="@+id/ratingbutton" android:layout_width="fill_parent"
+				android:textSize="14sp" android:layout_height="30dp"
+				android:layout_weight="1" android:textColor="#FFFFFF"
+				android:textStyle="bold" android:background="@drawable/center_image"
+				android:text="@string/rating">
+			</Button>
+
+			<Button android:id="@+id/mapbutton" android:layout_width="fill_parent"
+				android:textSize="14sp" android:layout_height="30dp"
+				android:layout_weight="1" android:textColor="#FFFFFF"
+				android:textStyle="bold" android:background="@drawable/right_image"
+				android:text="@string/map">
+			</Button>
+		</LinearLayout>
+	</LinearLayout>
+	<com.google.android.maps.MapView
+		android:layout_above="@+id/bottom" android:layout_below="@+id/top"
+		android:id="@+id/map_location_viewer" android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:clickable="true"
+		android:visibility="gone" android:apiKey="@string/mapapikey" />
+	<LinearLayout android:id="@+id/listviewll"
+		android:orientation="vertical" android:layout_above="@+id/bottom"
+		android:layout_below="@+id/top" android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		<RelativeLayout android:layout_width="fill_parent"
+			android:layout_height="30dp" android:background="@drawable/topbar_s1">
+			<TextView android:id="@+id/resultstext"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" android:layout_below="@+id/topbutton"
+				android:paddingLeft="5dp"
+				android:singleLine="true" android:textColor="#FFFFFF"
+				android:textSize="14sp" android:textStyle="bold"
+				android:layout_centerVertical="true"
+				android:layout_centerHorizontal="true" android:layout_gravity="center_vertical"
+				android:gravity="center_vertical" android:layout_toLeftOf="@+id/whitearrowresults">
+			</TextView>
+			<ImageView android:layout_alignParentRight="true"
+				android:layout_centerVertical="true" android:id="@+id/whitearrowresults"
+				android:layout_width="9dp" android:layout_marginRight="5dp"
+				android:layout_height="13dp" android:layout_marginLeft="5dp"
+				android:layout_gravity="right|center_vertical" android:src="@drawable/whitearrow" />
+		</RelativeLayout>
+		<LinearLayout android:id="@+id/ad" android:layout_width="fill_parent"
+			android:layout_height="60dp">
+		</LinearLayout>
+		<ExpandableListView android:id="@+id/listview" android:childDivider="#E0E0E0"
+			android:layout_width="fill_parent" android:dividerHeight="0dp" android:divider="#00000000" 
+			android:layout_height="wrap_content" android:scrollbars="none"
+			android:cacheColorHint="#00000000" android:groupIndicator="@null">
+		</ExpandableListView>
+		<ExpandableListView android:id="@+id/ratinglistview" android:divider="#00000000"
+			android:layout_width="fill_parent" android:dividerHeight="0dp" android:childDivider="#E0E0E0"
+			android:layout_height="wrap_content" android:scrollbars="none"
+			android:cacheColorHint="#00000000" android:groupIndicator="@null">
+		</ExpandableListView>
+	</LinearLayout>
+	<RelativeLayout android:id="@+id/bottom"
+		android:layout_width="fill_parent" android:layout_height="44dp"
+		android:layout_alignParentBottom="true" android:background="@drawable/topbar_s1">
+		<TextView android:id="@+id/bottomtitle" android:layout_width="fill_parent"
+			android:layout_height="44dp" android:paddingLeft="5dp" android:paddingRight="5dp"
+			android:gravity="center" android:singleLine="true" 
+			android:textColor="#FFFFFF" android:textSize="18sp" android:layout_toLeftOf="@+id/imgsystem" android:layout_toRightOf="@+id/imgreti">
+		</TextView>
+		<ImageView android:id="@+id/imgreti" android:layout_width="22dp"
+			android:layout_height="23dp" android:layout_alignParentLeft="true"
+			android:layout_centerVertical="true" android:layout_marginLeft="10dp"
+			android:src="@drawable/reticle" />
+		<ImageView android:id="@+id/imgsystem" android:layout_width="22dp"
+			android:layout_height="23dp" android:layout_alignParentRight="true"
+			android:layout_centerVertical="true" android:layout_marginRight="10dp"
+			android:src="@drawable/settings" />
+	</RelativeLayout>
+</RelativeLayout>

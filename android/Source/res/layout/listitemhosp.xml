@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:id="@+id/llmain" android:background="#FFFFFF" >
+	<LinearLayout android:id="@+id/lin_hospi_name"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="vertical" android:padding="5dp">
+		<TextView android:id="@+id/hopitalname" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_alignParentLeft="true"
+			android:layout_alignParentTop="true" android:singleLine="true"
+			android:text="Hospital Name" android:textColor="#15317E"
+			android:textStyle="bold" android:textSize="15sp" />
+		<RelativeLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+			<LinearLayout android:id="@+id/lin_prob_defin"
+				android:layout_toLeftOf="@+id/rightarrow" android:layout_width="fill_parent"
+				android:layout_height="wrap_content">
+				<LinearLayout android:layout_width="fill_parent"
+					android:layout_height="wrap_content" android:layout_weight="1"
+					android:orientation="vertical">
+					<TextView android:id="@+id/defin" android:layout_width="wrap_content"  android:singleLine="true"
+						android:layout_height="wrap_content" android:text="@string/Definitely_recommend"
+						android:textColor ="#4E9258" android:textSize="9sp" />
+					<RelativeLayout android:layout_width="fill_parent"
+						android:layout_height="wrap_content">
+						<ImageView 
+							android:layout_width="1dp" android:layout_height="19dp"
+							android:src="@drawable/lineseparator" />
+						<ProgressBar android:id="@+id/progressBarDefinitely"
+							android:progressDrawable="@drawable/progressdefinitely"
+							android:layout_width="fill_parent" android:layout_height="12dp" android:layout_marginLeft="1dp"
+							style="?android:attr/progressBarStyleHorizontal" android:layout_centerVertical="true"
+							android:indeterminateOnly="false" android:max="100" android:progress="30">
+						</ProgressBar>
+						<TextView android:id="@+id/pers_definitely" android:textSize="10sp"  android:singleLine="true"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:text="%" android:layout_alignParentRight="true"
+							android:layout_centerVertical="true" android:textColor="#000000"
+							android:textStyle="bold" android:layout_marginRight="5dp" />
+					</RelativeLayout>
+				</LinearLayout>
+				<LinearLayout android:layout_width="fill_parent" android:layout_marginLeft="10dp"
+					android:layout_height="wrap_content" android:layout_weight="1"
+					android:orientation="vertical">
+					<TextView android:id="@+id/probl" android:layout_width="wrap_content"  android:singleLine="true"
+						android:layout_height="wrap_content" android:layout_above="@+id/progressBar1"
+						android:layout_toRightOf="@+id/textView2" android:text="@string/Probably_or_definitely_not"
+						android:textColor="#F62217" android:textSize="9sp" />
+					<RelativeLayout android:layout_width="fill_parent"
+						android:layout_height="wrap_content">
+						<ImageView 
+							android:layout_width="1dp" android:layout_height="19dp"
+							android:src="@drawable/lineseparator" />
+						<ProgressBar android:id="@+id/progressBarNot" android:layout_centerVertical="true"
+							android:progressDrawable="@drawable/progressprobably" android:layout_marginLeft="1dp"
+							android:layout_width="fill_parent" android:layout_height="12dp"
+							style="?android:attr/progressBarStyleHorizontal"
+							android:indeterminateOnly="false" android:max="100" android:progress="30">
+						</ProgressBar>
+						<TextView android:id="@+id/pers_Not" android:singleLine="true"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:text="%" android:layout_alignParentRight="true"
+							android:layout_centerVertical="true" android:textColor="#000000"
+							android:textStyle="bold" android:textSize="10sp"/>
+					</RelativeLayout>
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout android:layout_width="wrap_content" android:layout_marginLeft="10dp"
+				android:layout_alignParentRight="true" android:id="@+id/rightarrow"
+				android:layout_height="wrap_content" android:orientation="horizontal">
+				<TextView android:id="@+id/mi" android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:text="mi" android:singleLine="true"
+					android:textColor="#494949" android:textSize="11sp" android:textStyle="bold" />
+				<ImageView android:id="@+id/arrowimg"
+					android:layout_width="10dp" android:layout_height="14dp"
+					android:layout_marginLeft="5dp" android:layout_gravity="right|center_vertical"
+					android:src="@drawable/greyarrow" />
+			</LinearLayout>
+		</RelativeLayout>
+	</LinearLayout>
+</LinearLayout>

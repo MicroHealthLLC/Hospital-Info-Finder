@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:background="#FFFFFF">
+
+	<RelativeLayout android:id="@+id/top"
+		android:layout_width="fill_parent" android:layout_height="44dp"
+		android:background="@drawable/bluetopbck">
+
+		<Button android:id="@+id/clearbtn" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_alignParentLeft="true"
+			android:layout_marginLeft="10dp" android:layout_centerVertical="true"
+			android:background="@drawable/bluebtn" android:text="@string/clear"
+			android:textColor="#FFFFFF" />
+
+		<TextView android:id="@+id/addtxt" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:ellipsize="end"
+			android:layout_centerInParent="true" android:text="@string/location"
+			android:textColor="#FFFFFF" android:textSize="18sp"
+			android:textStyle="bold">
+		</TextView>
+
+		<Button android:id="@+id/cancelbtn" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_alignParentRight="true"
+			android:layout_marginRight="10dp" android:layout_centerVertical="true"
+			android:background="@drawable/bluebtn" android:text="@string/cancel"
+			android:textColor="#FFFFFF" />
+	</RelativeLayout>
+
+	<RelativeLayout android:layout_width="fill_parent"
+		android:id="@+id/searchbar" android:layout_height="44dp"
+		android:layout_below="@+id/top_bar" android:background="@drawable/searchtab_back">
+		<AutoCompleteTextView android:layout_width="fill_parent"
+			android:completionThreshold="3" android:imeActionLabel="Search"
+			android:singleLine="true" android:textColor="#000000"
+			android:textSize="12sp" android:layout_marginLeft="5dp"
+			android:layout_marginRight="5dp" android:layout_centerVertical="true"
+			android:layout_height="wrap_content" android:background="@drawable/searchtab"
+			android:id="@+id/searchtext"
+			android:imeOptions="actionSearch" />
+		<ImageView android:id="@+id/searchcancel" android:layout_width="17dp" android:visibility="gone"
+			android:layout_height="17dp" android:layout_marginRight="15dp"
+			android:layout_marginLeft="2dp" android:src="@drawable/cancel"
+			android:layout_alignParentRight="true" android:layout_centerVertical="true">
+		</ImageView>
+	</RelativeLayout>
+	<ListView android:id="@+id/searchlist" android:divider="#E0E0E0"
+		android:layout_width="fill_parent" android:dividerHeight="1dp"
+		android:layout_height="fill_parent" android:scrollbars="none"
+		android:cacheColorHint="#00000000" android:visibility="visible">
+	</ListView>
+
+</LinearLayout>
